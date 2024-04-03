@@ -68,6 +68,30 @@ public class ShippingCompany
             System.out.println(transport);
         }
     }
+    
+    public void addToService(Transport transport)
+    {
+        inService.add(transport);
+    }
+    
+    public void removeFromService(Transport transport)
+    {
+        inService.remove(transport);
+    }
+    
+    public void makeTransportation(String id, String origin, String destination, double price)
+    {
+        Transport transport = getTransportation(id);
+        if (transport != null && transport.isAvailable())
+        {
+            transport.setOrigin(origin);
+            transport.setDestination(destination);
+            transport.setPrice(price);
+            transport.setAvailable(false);
+            addToService(transport);
+            remove(transport);
+        }
+    }
 }
 
     
