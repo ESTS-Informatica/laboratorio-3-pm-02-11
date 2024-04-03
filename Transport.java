@@ -15,6 +15,8 @@ public class Transport {
     private double price;
     private double fees;
     private boolean available;
+    private GroundTransportation groundTransport;    
+    private AirTransportation airTransport;
 
     public Transport() {
         this.id = "T-" + String.format("%03d", ++auto);
@@ -24,7 +26,7 @@ public class Transport {
         this.fees = 0.0;
         this.available = true;
     }
-
+    
     public String getOrigin() {
         return this.origin;
     }

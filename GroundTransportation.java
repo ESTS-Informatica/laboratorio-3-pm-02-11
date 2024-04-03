@@ -11,10 +11,48 @@ import org.junit.jupiter.api.Test;
  * @author  POO
  * @version 03/2024
  */
-public class GroundTransportationTest {
+public class GroundTransportation {
     
     private GroundTransportation groundTransport;
-
+    private String licensePlate;
+    
+    public GroundTransportation(String licensePlate)
+    {
+        this.licensePlate = licensePlate;
+    }
+    
+    public String getLicensePlate()
+    {
+        return licensePlate;
+    }
+    
+    public void setLicensePlate(String licensePlate)
+    {
+        this.licensePlate = licensePlate;
+    }
+    
+    public void setLicensePlate()
+    {
+        this.licensePlate = licensePlate;
+    }
+    
+    @Override
+    public double getPriceWithFees()
+    {
+        return getPriceWithFees() * 1.03;
+    }
+    
+    public String getTransportType()
+    {
+        return "Transporte Terrestre";
+    }
+    
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", Matrícula: " + licensePlate;
+    }
+    
     @BeforeEach
     public void setUp() {
         groundTransport = new GroundTransportation("ABC123");
