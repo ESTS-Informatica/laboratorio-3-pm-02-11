@@ -90,7 +90,24 @@ public class ShippingCompany
             transport.setAvailable(false);
             addToService(transport);
             remove(transport);
+            System.out.println("Transporte com ID " + id + " foi realizado com sucesso!");
+        } else
+        {
+            System.out.println("Transporte com ID " + id + " não encontrado ou não disponível.");
         }
+
+    }
+    
+    private Transport getTransportation(String id)
+    {
+        for(Transport transport : )
+        {
+            if(transport.getId().equals(id))
+            {
+                return transport;
+            }
+        }
+        return null;
     }
 }
 
