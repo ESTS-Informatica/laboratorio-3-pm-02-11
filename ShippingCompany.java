@@ -44,12 +44,30 @@ public class ShippingCompany
         }
         return sb.toString();
     }
-
-    public static void main(String[] args)
+    
+    private void addmethod()
     {
-        ShippingCompany company = new ShippingCompany("RELIABLE-MOVING");
+        GroundTransportation groundTransportation = new GroundTransportation(150.0, "MCD456");
+        AirTransportation airTransportation1 = new AirTransportation(700.0, "Boeing 747", 2);
+        AirTransportation airTransportation2 = new AirTransportation(900.0, "Airbus A380", 3);
+        Lorry lorry = new Lorry(200.0, "XYZ456", 11, 4);
+        Van van = new Van(150.0, "RTF092", 130);
+
+        shippingCompany.add(groundTransportation);
+        shippingCompany.add(airTransportation1);
+        shippingCompany.add(airTransportation2);
+        shippingCompany.add(lorry);
+        shippingCompany.add(van);
     }
+       
+    public void show()
+    {
+        System.out.println("Transportes na empresa " + shippingCompany.getName() + ":");
+        for (Transport transport : shippingCompany) 
+        {
+            System.out.println(transport);
+        }
+    }
+}
 
     
-    
-}
