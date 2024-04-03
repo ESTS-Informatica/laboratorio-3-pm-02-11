@@ -11,7 +11,7 @@ public class Lorry
         this.licensePlate = "";
     }
 
-     public int getNumberOfPallets()
+    public int getNumberOfPallets()
     {
         return numberOfPallets;
     }
@@ -34,7 +34,11 @@ public class Lorry
 
 
 
-
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", Número de Paletes: " + numberOfPallets + ", Número de Atrelados: " + trailers;
+    }
 
 
 
