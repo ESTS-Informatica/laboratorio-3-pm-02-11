@@ -119,9 +119,7 @@ public class Transport {
         return this.price * (1.0 + (this.fees * 0.01));
     }
 
-    
     public String getTransportType() {
         return "Transporte genérico";
     }
-
 }

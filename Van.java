@@ -19,6 +19,10 @@ public class Van
         this.packages = packages;
     }
 
-    
+    @Override
+    public String toString()
+    {
+        return super.toString() + ", Número de Pacotes: " + packages;
+    }
         
 }
