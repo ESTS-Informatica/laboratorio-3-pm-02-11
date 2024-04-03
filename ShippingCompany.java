@@ -98,9 +98,40 @@ public class ShippingCompany
 
     }
     
+    public void finalizeTransportation(String id)
+    {
+        Transport transport = getTransportFromService(id);
+        if (transport != null)
+        {
+            transport.setOrigin("");
+            transport.setDestination("");
+            transport.setPrice(0.0);
+            transport.setAvailable(true);
+            addToService(transport);
+            remove(transport);
+            System.out.println("Transporte com ID " + id + " foi realizado com sucesso!");
+        } else
+        {
+            System.out.println("Transporte com ID " + id + " não encontrado.");
+        }
+
+    }
+    
     private Transport getTransportation(String id)
     {
-        for(Transport transport : )
+        for(Transport transport : transportation)
+        {
+            if(transport.getId().equals(id))
+            {
+                return transport;
+            }
+        }
+        return null;
+    }
+    
+    private Transport getTransportFromService(String id)
+    {
+        for(Transport transport : inService)
         {
             if(transport.getId().equals(id))
             {
